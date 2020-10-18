@@ -25,7 +25,7 @@ Customers list -- loading
 		 />
 			<table>
 				<tr>
-				<th>First Name</th>
+				<th><a href="/MVCWebApp/customer/orderByFirstName">First Name</a></th>
 				<th>Last Name</th>
 				<th>Email</th>
 				<th>Action</th>

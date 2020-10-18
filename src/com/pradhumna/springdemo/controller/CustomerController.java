@@ -1,5 +1,6 @@
 package com.pradhumna.springdemo.controller;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,13 @@ public class CustomerController {
 		return "customer-form";
 	}
 	
+	@GetMapping("/orderByFirstName")
+	public String orderByFirstName(Model model) {
+		List<Customer> theCustomers = customerService.getCustomers();	
+		Collections.sort(theCustomers, Customer.cusNameComparator);
+		model.addAttribute("customers", theCustomers);	
+			return "list-customers";
+	}
 	
 	@PostMapping("/saveCustomer")
 	public String saveCustomer(@ModelAttribute("customer") Customer theCustomer)
